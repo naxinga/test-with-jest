@@ -30,7 +30,7 @@ test("One yen should be 0.67 pounds", function(){
 }
 )
 
-test("Siempre positivo nunca negativo", function(){
+test("Siempre positivo nunca negativo", function(){//Si introducimos un numero negativo, devuelve false.
     expect(fromDollarToYen(-1)).toBe(false);
 }
 )
