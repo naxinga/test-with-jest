@@ -18,25 +18,35 @@ const oneEuroIs = {
 }
 
 function fromDollarToYen(doll){
-    If (isNaN(doll)){
+    if (typeof doll !== 'string' && doll>=0){ // Comprobamos que no sea un string y que no sea un numero negativo
     let euros = doll / oneEuroIs["USD"];
     let yenes = euros * oneEuroIs["JPY"];
-    return yenes;
-    }else{
-        return ("no es un entero");
+    return parseFloat(Number.parseFloat(yenes).toFixed(2)); // Si le hago solamente un parseFloat me devuelve 2 decimaes pero en string, el segundo me lo convierte a float de nuevo.
+    }else if (typeof doll === 'string' || doll<0){ // Si es String o negativo return false
+        return false;
     }    
 }
 
 function fromEuroToDollar(eur){
+    if (typeof eur !== 'string' && eur>=0){ 
     let doll = eur * oneEuroIs["USD"];
-    return doll;
+    return parseFloat(Number.parseFloat(doll).toFixed(2));
+    }else if (typeof eur === 'string' || eur<0){
+    return false;
+    }   
 }
 
 function fromYanToPound(yen){
+    if (typeof yen !== 'string' && yen>=0){
     let euros = yen / oneEuroIs["USD"];
     let libras = euros * oneEuroIs["GBP"];
-    return libras;
+    return parseFloat(Number.parseFloat(libras).toFixed(2));
+    }else if (typeof yen === 'string'|| yen<0){
+    return false;
+} 
 }
+
+
 
 module.exports = { fromDollarToYen, fromEuroToDollar,fromYanToPound };
 
