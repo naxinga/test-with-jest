@@ -25,6 +25,11 @@ test("One dollar should be 106.58 yens", function(){
 }
 )
 
+test("One yen should be 0.67 pounds", function(){
+    expect(fromYanToPound(1)).toBe(0.67);
+}
+)
+
 test("Siempre positivo nunca negativo", function(){
     expect(fromDollarToYen(-1)).toBe(false);
 }
