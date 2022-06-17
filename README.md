@@ -1,39 +1,18 @@
-# Unit testing with Jest
+Buenas!
 
-```
-Important: 💻  This exercise is interactive.
-Please follow the instructions.
-```
+Este trabajo va sobre los test de Jest, a continuacion describo brevemente los pasos seguidos:
 
-Most developers today are required not only to write code, but they also need to write code to test their own code 😱, yes.. really.
+Primero se han instalado todos los paquetes necesarios para que jest funcione correctamente y en package.json se ha especificado que los test sean "jest".
 
-Today we are going to be using the [jest framework](https://jestjs.io/) to create our first tests.
+Despues se han creado los archivos app.js y test.js, en app.js haremos nuestras funciones y en test.js llamaremos al test para hacer las pruebas.
 
-## 🌱  How to start this project
+Se han creado las funciones fromDollarToYen, fromEuroToDollar y fromYanToPound en app.js, tratando en primera instancia que funcionen para valores simples.
 
-This project comes with the necessary files to start working, but you have two options to start:
+Cuando se han creado las funciones nos vamos a test.js y hacemos el primer test a cada función, vemos que hacen su labor pero de forma muy simple.
 
-a) Use gitpod: open this link in your browser to clone it with gitpod: https://gitpod.io#https://github.com/breatheco-de/exercise-unit-test-with-jest.git
+Una vez esta funcionando nos volvemos a app.js para añadir unas cuantas excepciones:
+    *Si es un string lo que le entra como valor que devuelva false.
+    *Si es un numero negativo que devuelva false.
+    *Si tiene mas de 2 decimales que corte a los dos decimales.
 
-b) You can clone this repository on your local computer:
-```sh
-$ git clone https://github.com/breatheco-de/exercise-unit-test-with-jest.git
-```
-💡 Important: Remember to create a new repository, update the remote (`git remote set-url origin <your new url>`), and upload the code to your new repository using `add`, `commit` and `push`.
-
-Then follow this instructions:
-
-1. Get into the exercise folder: `$ cd exercise-unit-test-with-jest`
-2. Download learnpack globally (if you don't have it already): `$ npm i learnpack -g`
-3. Start the exercise: `$ learnpack start`
-
-## What is this exercise about?
-
-We are going to be using the Jest library to build a program capable of converting numeric values from one currency to another:
-
-| Function name     | Description                                                           |
-| ----------------- | --------------------------------------------------------------------- |
-| fromDollarToYen   | Receives a dollar amount and returns equivalent amount in Japan Yen  |
-| fromEuroToDollar  | Receives a Euro amount and returns equivalent amount in US Dollar     |
-| fromYenToPound    | Receives a Yen amount and equivalent amount in England Pound          |
-
+Hacemos en test.js las comprobaciones de lo anterior y listo.
